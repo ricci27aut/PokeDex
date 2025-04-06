@@ -6,19 +6,30 @@
     <title>Pokedex</title>
     <link href="">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/tamplate.css">
     <script src="/script/script.js"></script>
     <script src="/script/tamplate.js"></script>
     <script src="/script/data.js"></script>
 </head>
-<body onload="init()">
-    <header>
-        <div class="flex-center"><img src="" alt="Logo"><h1>Pokedex</h1></div>
-        <input class="" type="text" id="search" placeholder="Search for a Pokémon...">
-    </header>
+<body onload="fetchPokeDex()">
 
-    <footer>
+    <img class="body-img" src="./img/pokeboll-color.png" alt="Pokeball">
+
+    <div class="flex-center">
+    <header class="div-shadow">
+        <div class="flex-center"><img src="" alt="Logo"><h1>Pokedex</h1></div>
+        <input class="" type="text" id="search" placeholder="Search for a Pokémon..."></input>
+    </header>
+</div>
+
+    <div class="flex-center padding-content flex-wrap" id="content">     
+    </div>
+
+    <div class="flex-center">
+    <footer class="div-shadow">
         <img src="" alt="">
     </footer>
+    </div>
     
 </body>
 </html>
