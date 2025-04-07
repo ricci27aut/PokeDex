@@ -27,10 +27,6 @@ header{
     z-index: 10;
 }
 
-.Pokedex-info-div{
-    height: 100vh;
-}
-
 footer{
     background-color: white;
     border-radius: 10px;

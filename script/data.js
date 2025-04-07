@@ -16,7 +16,7 @@ async function pushPokemons(PokemonsNames) {
         let typeAndImg = await getPokeInfo(pokemon.url);
         let pokemonEntry = await getPokeEntry(pokemonName);
         let pokemonAbilitis = await getAbilitis(pokemonName);
-        AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entry-text": pokemonEntry, "abilitis": pokemonAbilitis,});
+        AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entryText": pokemonEntry, "abilitis": pokemonAbilitis,});
     }
     console.log(AllPokemons);
     showPokedex()
@@ -30,8 +30,9 @@ async function getPokeInfo(url) {
     pokemonHight = data.height
     okemonWeight = data.weight
     pokemonID = data.id
+    speciesUrl = data.species.url
 
-    return { "img": `${pokemonImg}`, "id": `${pokemonID}`, "height": `${pokemonHight}`, "weight": `${okemonWeight}` };
+    return { "img": `${pokemonImg}`, "id": `${pokemonID}`, "height": `${pokemonHight}`, "weight": `${okemonWeight}`, "speciesUrl": `${speciesUrl}` };
 }
 
 async function getPokeEntry(pokemonName) {
@@ -39,7 +40,8 @@ async function getPokeEntry(pokemonName) {
     const data = await response.json();
 
     pokemonEntry = data.flavor_text_entries[0].flavor_text
-    return
+    const formattedText = pokemonEntry.replace("\n", "<br>").replace("\f", "");
+    return formattedText
 }
 
 async function getAbilitis(pokemonName) {
@@ -47,17 +49,12 @@ async function getAbilitis(pokemonName) {
     const data = await response.json();
 
     const abilities = data.abilities.map((ab) => ab.ability.name);
-
     const stats = {};
     data.stats.forEach((statObj) => {
-        stats[statObj.stat.name] = statObj.base_stat;
-    });
-
+        stats[statObj.stat.name] = statObj.base_stat;});
     const types = data.types.map((t) => t.type.name);
-
     return {
         abilities: abilities,
         stats: stats,
-        types: types
-    };
+        types: types};
 }
