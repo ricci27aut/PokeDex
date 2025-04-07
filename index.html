@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,37 @@
     <link href="">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/tamplate.css">
+    <link rel="stylesheet" href="/style/typ.css">
     <script src="/script/script.js"></script>
     <script src="/script/tamplate.js"></script>
     <script src="/script/data.js"></script>
 </head>
+
 <body onload="fetchPokeDex()">
 
     <img class="body-img" src="./img/pokeboll-color.png" alt="Pokeball">
 
     <div class="flex-center">
-    <header class="div-shadow">
-        <div class="flex-center"><img src="" alt="Logo"><h1>Pokedex</h1></div>
-        <input class="" type="text" id="search" placeholder="Search for a Pokémon..."></input>
-    </header>
-</div>
-
-    <div class="flex-center padding-content flex-wrap" id="content">     
+        <header class="div-shadow">
+            <div class="flex-center"><img src="" alt="Logo">
+                <h1>Pokedex</h1>
+            </div>
+            <input class="" type="text" id="search" placeholder="Search for a Pokémon..."></input>
+        </header>
     </div>
+
+    <div class="flex padding-content">
+        <div class="flex-center flex-wrap" id="content"></div>
+        <div id="Pokedex-info" class="Pokedex-info-div"></div>
+    </div>
+
 
     <div class="flex-center">
-    <footer class="div-shadow">
-        <img src="" alt="">
-    </footer>
+        <footer class="div-shadow">
+            <img src="" alt="">
+        </footer>
     </div>
-    
+
 </body>
+
 </html>

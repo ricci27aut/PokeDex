@@ -6,26 +6,58 @@ let AllPokemons = []
 async function fetchPokeDex() {
     const response = await fetch(PokeDexAPI);
     const data = await response.json();
-    renderPokemons(data.results)
+    pushPokemons(data.results)
 }
 
-async function renderPokemons(PokemonsNames) {
+async function pushPokemons(PokemonsNames) {
     for (let ipokemon = 0; ipokemon < PokemonsNames.length; ipokemon++) {
-      const pokemon = PokemonsNames[ipokemon];
+        const pokemon = PokemonsNames[ipokemon];
         const pokemonName = pokemon.name;
-        let typeAndImg = await getTypeAndImg(pokemon.url);
-        AllPokemons.push({ "name": `${pokemonName}`, "type": typeAndImg.type, "img": typeAndImg.img, "id" : typeAndImg.id });
+        let typeAndImg = await getPokeInfo(pokemon.url);
+        let pokemonEntry = await getPokeEntry(pokemonName);
+        let pokemonAbilitis = await getAbilitis(pokemonName);
+        AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entry-text": pokemonEntry, "abilitis": pokemonAbilitis,});
     }
-    console.log(AllPokemons); 
-    showPokedex() 
+    console.log(AllPokemons);
+    showPokedex()
 }
 
- async function getTypeAndImg(url) {
+async function getPokeInfo(url) {
     const response = await fetch(url);
     const data = await response.json();
 
     pokemonImg = data.sprites.front_default;
-    pokemonType = data.types[0].type.name
+    pokemonHight = data.height
+    okemonWeight = data.weight
     pokemonID = data.id
-    return { "img": `${pokemonImg}`, "type": `${pokemonType}`, "id" : `${pokemonID}` };
+
+    return { "img": `${pokemonImg}`, "id": `${pokemonID}`, "height": `${pokemonHight}`, "weight": `${okemonWeight}` };
+}
+
+async function getPokeEntry(pokemonName) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}/`);
+    const data = await response.json();
+
+    pokemonEntry = data.flavor_text_entries[0].flavor_text
+    return
+}
+
+async function getAbilitis(pokemonName) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`);
+    const data = await response.json();
+
+    const abilities = data.abilities.map((ab) => ab.ability.name);
+
+    const stats = {};
+    data.stats.forEach((statObj) => {
+        stats[statObj.stat.name] = statObj.base_stat;
+    });
+
+    const types = data.types.map((t) => t.type.name);
+
+    return {
+        abilities: abilities,
+        stats: stats,
+        types: types
+    };
 }

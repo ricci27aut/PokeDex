@@ -14,17 +14,16 @@
 h2{
     font-weight: 600;
     text-decoration: underline;
-
 }
 
 .entry-header {
     display: flex;
-    justify-content: center; /* zentriert den Namen */
+    justify-content: center;
     align-items: center;
     position: relative;
 }
 
-  .pokemon-id {
+.pokemon-id{
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -35,4 +34,10 @@ h2{
     width: 17px;
     margin-left: 10px;
     padding-left: 5px;
-  }
+}
+
+.bb{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+}
