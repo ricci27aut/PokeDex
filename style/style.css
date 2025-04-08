@@ -2,6 +2,7 @@ body{
     background-color: rgb(246,248,252);
     margin: 0;
     padding: 0;
+    font-family: "Raleway", sans-serif;
 }
 
 .body-img{
@@ -13,18 +14,30 @@ body{
     z-index: -5;
 }
 
+.body-img2{
+    position: fixed;
+    top:40px;
+    right: 40px;
+    height: 600px;
+    width: 600px;
+    z-index: -5;
+}
+
 header{
     padding-left: 20px;
     background-color: white;
     border-radius: 10px;
     height: 100px;
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     position: fixed;
     top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
 
 header img{
@@ -43,11 +56,19 @@ footer{
     background-color: white;
     border-radius: 10px;
     height: 100px;
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.footerPossition{
+    position: relative;
+    bottom: 0;
 }
 
 .img-size{
@@ -58,11 +79,6 @@ footer{
 .input{
     margin-right: 10px;
     border: 2px solid rgb(0, 0, 0);
-}
-
-.div-shadow{
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 10px;
 }
 
 .flex-center{
@@ -82,6 +98,7 @@ footer{
 
 .flex{
     display: flex;
+    justify-content: center;
 }
 
 .flex-space{
@@ -90,11 +107,140 @@ footer{
     align-items: center;
 }
 
+.flex-colum{
+    display: flex;
+    flex-direction: column;
+}
+
 .gap{
     gap: 10px;
 }
 
-button{
-    margin: 20px;
+.gap-20px{
+    gap: 20px;
 }
+
+.gap-50px{
+    gap: 50px;
+}
+
+.padding-top{
+    padding-top: 40px;
+}
+
+.padding-5px{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.padding-50px{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+.dnone{
+    display: none;
+}
+
+.text-align{
+    text-align: center;
+}
+
+button{
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin: 20px;
+}
+
+button:hover,
+button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+button:active {
+  opacity: .5;
+}
+
+
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  height: 10px;
+  padding-block: 1px;
+  padding-inline: 1px;
+  margin: 7px;
+}
+
+.button-13:hover {
+  background-color: #f7fafa;
+}
+
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+a{
+    height: 230px;
+}
+
+.max-width{
+    max-width: 1440px;
+    margin: auto;
+}
+
+@media(max-width: 460px){
+    header{
+        flex-direction: column;
+        height: 130px;
+    }
+
+    .input{
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+
+
+
 

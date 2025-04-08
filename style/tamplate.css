@@ -33,19 +33,77 @@ h2{
     margin-block-end: 3px;
 }
 
+.animation-pokedex {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .animation-pokedex:hover {
+    transform: translateY(-10px);
+  }
+
 .p-pokedex{
     width: fit-content;
     color: rgb(255, 255, 255);
 }
 
-
-.bb{
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
+.p-pokeinfo{
+    margin-block-start: 3px;
+    margin-block-end: 0;
 }
 
-/*position: relative;
-top: -187px;
-left: 80px;
-}*/
+.pokedex-card-form{
+    border-radius: 10px;
+}
+
+.possition-pokemon{
+position: relative;
+top: -220px;
+left: 85px;
+}
+
+.PokédexInfo{
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.background-pokeInfo{
+    background-image: url(/img/pokedexbackground.png);
+    background-position: center;
+    background-size: cover;
+}  
+
+.ability-0{
+    border: 1px brown solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.ability-1{
+    border: 1px burlywood solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.ability-2{
+    border: 1px blue solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.abilitih3{
+    margin-block-start: 30px;
+    margin-block-end: 5px;
+}
+
+.pokemonheight{
+   background-color: rgba(128, 128, 128, 0.349);
+    border-radius: 10px;
+}
+
+
+
+

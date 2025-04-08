@@ -1,3 +1,4 @@
+let evolutionchange = "https://pokeapi.co/api/v2/evolution-chain/7/"
 let PokeDexAPI = "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
 let PokeAmount = 20;
 let AllPokemons = []
@@ -19,8 +20,8 @@ async function pushPokemons(PokemonsNames) {
         let pokemonAbilitis = await getAbilitis(pokemonName);
         AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entryText": pokemonEntry, "abilitis": pokemonAbilitis,});
     }
-    console.log(AllPokemons);
     showPokedex(AllPokemons)
+    console.log(AllPokemons);
 }
 
 async function getPokeInfo(url) {

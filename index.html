@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/tamplate.css">
     <link rel="stylesheet" href="/style/typ.css">
+    <link rel="stylesheet" href="/style/stats.css">
+    <link rel="stylesheet" href="/style/font.css">
     <script src="/script/script.js"></script>
     <script src="/script/tamplate.js"></script>
     <script src="/script/data.js"></script>
 </head>
 
-<body onload="fetchPokeDex()">
+<body onload="init()">
 
     <img class="body-img" src="./img/pokeboll-color.png" alt="Pokeball">
 
-    <div class="flex-center">
+    <div class="flex-center max-width">
         <header class="div-shadow">
             <div class="flex-center"><img src="./img/lock.png" alt="Logo">
                 <h1>Pokedex</h1>
@@ -27,14 +29,13 @@
         </header>
     </div>
 
-    <div class="flex padding-content">
+    <div class="flex padding-content max-width">
         <div class="flex-center flex-wrap" id="content"></div>
         <div id="Pokemon-info"></div>
     </div>
-    <div class="flex-center "><Button onclick="renderMorePokemon()">Load more</Button></div>
-
-
-    <div class="flex-center">
+   
+    <div class="flex-colum flex-center footerPossition max-width">
+    <Button onclick="renderMorePokemon()" id="Button-more">Load more</Button>
         <footer class="div-shadow">
             <img class="img-size" src="./img/lock.png" alt="">
         </footer>

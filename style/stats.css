@@ -1,0 +1,119 @@
+.stat-hp {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e85858;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-hp p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+.stat-atk {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f28b30;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-atk p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+.stat-def {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f8d030;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-def p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+.stat-spa {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6890f0;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-spa p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+
+.stat-spd {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #78c850;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-spd p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+.stat-spe {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f85888;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-spe p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}

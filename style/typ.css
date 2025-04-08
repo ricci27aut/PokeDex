@@ -1,108 +1,185 @@
-.grass {
-    background-color: green;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.fire {
-    background-color: red;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.water {
-    background-color: blue;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
 .normal {
     background-color: gray;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.bug {
-    background-color: yellowgreen;
+  }
+  
+  .fire {
+    background-color: red;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.electric {
+  }
+  
+  .water {
+    background-color: blue;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .electric {
     background-color: yellow;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.fairy {
-    background-color: pink;
+  }
+  
+  .grass {
+    background-color: green;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.fighting {
-    background-color: brown;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.ghost {
-    background-color: indigo;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.poison {
-    background-color: purple;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.psychic {
-    background-color: magenta;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.rock {
-    background-color: sienna;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-.ice {
+  }
+  
+  .ice {
     background-color: lightblue;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.dragon {
-    background-color: darkblue;
+  }
+  
+  .fighting {
+    background-color: brown;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.dark {
-    background-color: black;
+  }
+  
+  .poison {
+    background-color: purple;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.steel {
-    background-color: steelblue;
+  }
+  
+  .ground {
+    background-color: peru;
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.flying {
+  }
+  
+  .flying {
     background-color: rgba(99, 99, 247, 0.918);
     border-radius: 10px;
     padding: 5px 10px;
-}
-
-.none {
-    background-color: white;
-    color: black;
+  }
+  
+  .psychic {
+    background-color: magenta;
     border-radius: 10px;
     padding: 5px 10px;
+  }
+  
+  .bug {
+    background-color: yellowgreen;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .rock {
+    background-color: sienna;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .ghost {
+    background-color: indigo;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .dragon {
+    background-color: darkblue;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .dark {
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .steel {
+    background-color: steelblue;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  .fairy {
+    background-color: pink;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+
+.typ-shadow {
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.grass-shadow {
+    box-shadow: 0 4px 4px rgba(0, 128, 0, 0.4);
+}
+
+.fire-shadow {
+    box-shadow: 0 4px 4px rgba(255, 0, 0, 0.4);
+}
+
+.water-shadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 255, 0.4);
+}
+
+.normal-shadow {
+    box-shadow: 0 4px 4px rgba(128, 128, 128, 0.4);
+}
+
+.bug-shadow {
+    box-shadow: 0 4px 4px rgba(154, 205, 50, 0.4);
+}
+
+.electric-shadow {
+    box-shadow: 0 4px 4px rgba(255, 255, 0, 0.4);
+}
+
+.fairy-shadow {
+    box-shadow: 0 4px 4px rgba(255, 192, 203, 0.4);
+}
+
+.fighting-shadow {
+    box-shadow: 0 4px 4px rgba(165, 42, 42, 0.4);
+}
+
+.ghost-shadow {
+    box-shadow: 0 4px 4px rgba(75, 0, 130, 0.4);
+}
+
+.poison-shadow {
+    box-shadow: 0 4px 4px rgba(128, 0, 128, 0.4);
+}
+
+.psychic-shadow {
+    box-shadow: 0 4px 4px rgba(255, 0, 255, 0.4);
+}
+
+.rock-shadow {
+    box-shadow: 0 4px 4px rgba(160, 82, 45, 0.4);
+}
+
+.ice-shadow {
+    box-shadow: 0 4px 4px rgba(173, 216, 230, 0.4);
+}
+
+.dragon-shadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 139, 0.4);
+}
+
+.dark-shadow {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.steel-shadow {
+    box-shadow: 0 4px 4px rgba(70, 130, 180, 0.4);
+}
+
+.flying-shadow {
+    box-shadow: 0 4px 4px rgba(99, 99, 247, 0.4);
+}
+
+.none-shadow {
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.4);
 }
