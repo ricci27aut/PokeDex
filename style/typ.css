@@ -1,118 +1,101 @@
 .grass {
     background-color: green;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .fire {
     background-color: red;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .water {
     background-color: blue;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .normal {
     background-color: gray;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .bug {
     background-color: yellowgreen;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .electric {
     background-color: yellow;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .fairy {
     background-color: pink;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .fighting {
     background-color: brown;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .ghost {
     background-color: indigo;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .poison {
     background-color: purple;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .psychic {
     background-color: magenta;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .rock {
     background-color: sienna;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .ice {
     background-color: lightblue;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .dragon {
     background-color: darkblue;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .dark {
     background-color: black;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
 .steel {
     background-color: steelblue;
-    color: white;
     border-radius: 10px;
     padding: 5px 10px;
 }
 
-.fly {
-    background-color: lightgray;
-    color: white;
+.flying {
+    background-color: rgba(99, 99, 247, 0.918);
     border-radius: 10px;
     padding: 5px 10px;
 }

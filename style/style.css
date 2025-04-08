@@ -27,6 +27,18 @@ header{
     z-index: 10;
 }
 
+header img{
+    height: 70px;
+    width: 70px;
+}
+
+header h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
 footer{
     background-color: white;
     border-radius: 10px;
@@ -36,6 +48,16 @@ footer{
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+.img-size{
+    height: 70px;
+    width: 70px;
+}
+
+.input{
+    margin-right: 10px;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .div-shadow{
@@ -62,4 +84,17 @@ footer{
     display: flex;
 }
 
+.flex-space{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.gap{
+    gap: 10px;
+}
+
+button{
+    margin: 20px;
+}
 

@@ -1,6 +1,7 @@
-let PokeDexAPI = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
-
+let PokeDexAPI = "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
+let PokeAmount = 20;
 let AllPokemons = []
+let findPokemon = [];
 
 
 async function fetchPokeDex() {
@@ -19,7 +20,7 @@ async function pushPokemons(PokemonsNames) {
         AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entryText": pokemonEntry, "abilitis": pokemonAbilitis,});
     }
     console.log(AllPokemons);
-    showPokedex()
+    showPokedex(AllPokemons)
 }
 
 async function getPokeInfo(url) {
@@ -29,7 +30,7 @@ async function getPokeInfo(url) {
     pokemonImg = data.sprites.front_default;
     pokemonHight = data.height
     okemonWeight = data.weight
-    pokemonID = data.id
+    let pokemonID = data.id.toString().padStart(3, "0")
     speciesUrl = data.species.url
 
     return { "img": `${pokemonImg}`, "id": `${pokemonID}`, "height": `${pokemonHight}`, "weight": `${okemonWeight}`, "speciesUrl": `${speciesUrl}` };

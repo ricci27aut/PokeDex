@@ -1,13 +1,14 @@
-function PokédexEntry(i) {
+function PokédexEntry(i, array) {
     return `   <div class="PokedexEntry div-shadow">
-     <div class="flex-center"><img src= ${AllPokemons[i].img} alt="Pokem-Abildung"></div>
+     <div class="flex-center"><img src= ${array[i].img} alt="Pokem-Abildung"></div>
+     <div class="flex-center">
+     <p class="pokemon-id">N°${array[i].id}</p>
+     </div>
             <div class="entry-header">
-             <p class="pokemon-id">${AllPokemons[i].id}</p>
-             <h2>${AllPokemons[i].name}</h1>
+             <h2>${array[i].name}</h1>
             </div>
            
-            <div>
-                <p class="${AllPokemons[i].abilitis.types}">${AllPokemons[i].abilitis.types}</p>
+            <div class="flex-space" id="type${i}">
             </div>
         </div>`
 }
@@ -31,8 +32,8 @@ function PokédexInfo(i) {
                 <h3>ABILITIES</h3>
                 <p></p>
                 <p></p>
-            <p>HEIGHT<p>${AllPokemons[i].height *10} CM</p></p>
-            <p>WEIGHT<p>${AllPokemons[i].weight/10} KG</p></p>
+            <p>HEIGHT<p>${AllPokemons[i].height * 10} CM</p></p>
+            <p>WEIGHT<p>${AllPokemons[i].weight / 10} KG</p></p>
             </div>
 
             <div>
@@ -49,8 +50,8 @@ function PokédexInfo(i) {
             <h3>EVOLUTION</h3>
             <div>
             <img src="${AllPokemons[i].img}" alt="">
-            <img src="${AllPokemons[i+1].img}" alt="">
-            <img src="${AllPokemons[i+2].img}" alt="">
+            <img src="${AllPokemons[i + 1].img}" alt="">
+            <img src="${AllPokemons[i + 2].img}" alt="">
             </div>
             </div>
         </div>`

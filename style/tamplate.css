@@ -12,7 +12,12 @@
 
 h2{
     font-weight: 600;
+    font-size: 20px;
     text-decoration: underline;
+    display: block;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    text-transform: uppercase;
 }
 
 .entry-header {
@@ -23,14 +28,14 @@ h2{
 }
 
 .pokemon-id{
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    background-image: url("/img/pokeball.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 40px 40px;
+    font-size: 15px;
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+}
+
+.p-pokedex{
+    width: fit-content;
+    color: rgb(255, 255, 255);
 }
 
 
@@ -39,3 +44,8 @@ h2{
     width: 100px;
     background-color: aqua;
 }
+
+/*position: relative;
+top: -187px;
+left: 80px;
+}*/
