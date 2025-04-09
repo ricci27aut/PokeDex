@@ -1,13 +1,14 @@
-let evolutionchange = "https://pokeapi.co/api/v2/evolution-chain/7/"
-let PokeDexAPI = "https://pokeapi.co/api/v2/pokemon?limit=200&offset=0"
+let PokeDexAPI = "https://pokeapi.co/api/v2/pokemon?limit=60&offset=0"
 let PokeAmount = 20;
 let AllPokemons = []
 let findPokemon = [];
+let evolutionChain = [];
 
 
 async function fetchPokeDex() {
     const response = await fetch(PokeDexAPI);
     const data = await response.json();
+
     pushPokemons(data.results)
 }
 
@@ -18,10 +19,10 @@ async function pushPokemons(PokemonsNames) {
         let typeAndImg = await getPokeInfo(pokemon.url);
         let pokemonEntry = await getPokeEntry(pokemonName);
         let pokemonAbilitis = await getAbilitis(pokemonName);
-        AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entryText": pokemonEntry, "abilitis": pokemonAbilitis,});
+        AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entryText": pokemonEntry, "abilitis": pokemonAbilitis, });
     }
     showPokedex(AllPokemons)
-    console.log(AllPokemons);
+    console.log(evolutionChain);
 }
 
 async function getPokeInfo(url) {
@@ -31,7 +32,7 @@ async function getPokeInfo(url) {
     pokemonImg = data.sprites.front_default;
     pokemonHight = data.height
     okemonWeight = data.weight
-    let pokemonID = data.id.toString().padStart(3, "0")
+    let pokemonID = data.id
     speciesUrl = data.species.url
 
     return { "img": `${pokemonImg}`, "id": `${pokemonID}`, "height": `${pokemonHight}`, "weight": `${okemonWeight}`, "speciesUrl": `${speciesUrl}` };
@@ -60,3 +61,6 @@ async function getAbilitis(pokemonName) {
         stats: stats,
         types: types};
 }
+
+
+

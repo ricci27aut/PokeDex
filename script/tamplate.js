@@ -1,7 +1,7 @@
 function PokédexEntry(i, array) {
-    return `   <a class="animation-pokedex" onclick="showPokemonInfo(${i})"><div class="PokedexEntry pokedex-card-form ${array[i].abilitis.types[0]}-shadow">
+    return `   <a class="animation-pokedex" onclick="showPokemonInfo(${array[i].id})"><div class="PokedexEntry pokedex-card-form ${array[i].abilitis.types[0]}-shadow">
      <div class="flex-center">
-     <p class="pokemon-id padding-top">N°${array[i].id}</p>
+     <p class="pokemon-id padding-top">N°${array[i].id.toString().padStart(3, "0")}</p>
      </div>
             <div class="entry-header">
              <h2>${array[i].name}</h1>
@@ -14,23 +14,24 @@ function PokédexEntry(i, array) {
 }
 
 function PokédexInfo(i) {
-    return ` <div class="PokédexInfo flex-colum">
-    <div class="flex-center background-pokeInfo"><img src="${AllPokemons[i].img}" alt="Pokem-Abildung"></div>
+    return ` <div class="PokédexInfo flex-colum overlay-content"> 
+    <div class="flex-center background-pokeInfo ${AllPokemons[i].abilitis.types[0]}-shadow"><img class="Pokemon-size-info" src="${AllPokemons[i].img}" alt="Pokemon Front"></div>
 
     <div class="flex-colum flex-center">
-        <p class="">N°${AllPokemons[i].id}</p>
-        <h2>${AllPokemons[i].name}</h2>
+        <p class="">N°${AllPokemons[i].id.toString().padStart(3, "0")}</p>
+        <h2 class="h2-underline">${AllPokemons[i].name}</h2>
         <div>
             <div class="flex-space" id="typeInfo${i}"></div>
             <h3 class="text-align ">Pokedex Entry</h3>
-            <p class="text-align ">${AllPokemons[i].entryText}</p>
+            <p class="text-align padding-5px">${AllPokemons[i].entryText}</p>
         </div>
 
         <div class="flex-center padding-5px">
             <button class="button-13" role="button" onclick="toggleNone(1)">ABILITIES</button>
             <button class="button-13" role="button" onclick="toggleNone(2)">STATS</button>
-            <button class="button-13" role="button" onclick="toggleNone(3)">EVOLUTION</button>
+            <button class="button-13" role="button" onclick="getEvolutionChainData('${AllPokemons[i].name}'), toggleNone(3)">EVOLUTION</button>
         </div>
+
 
         <div id="abilities" class="flex-colum">
             <h3 class="text-align abilitih3">ABILITIES</h3>
@@ -40,7 +41,6 @@ function PokédexInfo(i) {
                 <div class="text-align"><p>WEIGHT<p class="pokemonheight">${AllPokemons[i].weight / 10} KG</p></p></div>  
             </div>
         </div>
-
         <div id="stats" class="dnone">
             <h3 class="text-align">STATS</h3>
             <div class="flex-center flex-wrap gap-20px padding-50px text-align">
@@ -67,12 +67,11 @@ function PokédexInfo(i) {
 
         <div id="evolution" class="dnone">
             <h3 class="text-align">EVOLUTION</h3>
-            <div>
-                <img src="${AllPokemons[i].img}" alt="">
-                <img src="${AllPokemons[i + 1].img}" alt="">
-                <img src="${AllPokemons[i + 2].img}" alt="">
-            </div>
+            <div class="flex-center gap" id="evolutionContainer"></div>
         </div>
-    </div> <!-- Diese Div hier war wahrscheinlich die fehlende -->
+    </div>
+    <img id="last-Button" onclick="lastPokeInfo(${AllPokemons[i].id})" class="last-pokemon" src="/img/icon/Pfeil-Links.png" alt="last Pokemon">
+        <img id="nexst-Button" onclick="nextPokeInfo(${AllPokemons[i].id})" class="next-Pokemon" src="/img/icon/Pfeil-rechts.png" alt="next Pokemon">
+        <img onclick="removeOverlay()" class="x-img" src="./img/icon/x-taste.png" alt="close">
 </div>`
 }

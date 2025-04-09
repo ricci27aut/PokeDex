@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stat-hp p {
   margin: 5px 0 0;
   font-size: 14px;
@@ -31,6 +32,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stat-atk p {
   margin: 5px 0 0;
   font-size: 14px;
@@ -51,6 +53,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stat-def p {
   margin: 5px 0 0;
   font-size: 14px;
@@ -71,6 +74,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stat-spa p {
   margin: 5px 0 0;
   font-size: 14px;
@@ -91,6 +95,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stat-spd p {
   margin: 5px 0 0;
   font-size: 14px;
@@ -111,6 +116,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stat-spe p {
   margin: 5px 0 0;
   font-size: 14px;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="icon" type="image/x-icon" href="/img/pokeball.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/tamplate.css">
     <link rel="stylesheet" href="/style/typ.css">
@@ -17,7 +18,7 @@
 </head>
 
 <body onload="init()">
-
+    <div id="overlay"></div>
     <img class="body-img" src="./img/pokeboll-color.png" alt="Pokeball">
 
     <div class="flex-center max-width">
@@ -25,22 +26,21 @@
             <div class="flex-center"><img src="./img/lock.png" alt="Logo">
                 <h1>Pokedex</h1>
             </div>
-            <input class="input" type="text" id="search" placeholder="Search for a Pokémon..." onkeyup="searchForPokemon()"></input>
+            <input class="input" type="text" id="search" placeholder="Search for a Pokémon..."
+                onkeyup="searchForPokemon()"></input>
         </header>
     </div>
 
     <div class="flex padding-content max-width">
         <div class="flex-center flex-wrap" id="content"></div>
-        <div id="Pokemon-info"></div>
     </div>
-   
+
     <div class="flex-colum flex-center footerPossition max-width">
-    <Button onclick="renderMorePokemon()" id="Button-more">Load more</Button>
+        <Button onclick="renderMorePokemon()" id="Button-more">Load more</Button>
         <footer class="div-shadow">
             <img class="img-size" src="./img/lock.png" alt="">
         </footer>
     </div>
-
 </body>
 
 </html>
