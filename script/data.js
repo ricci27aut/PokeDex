@@ -1,66 +1,89 @@
-let PokeDexAPI = "https://pokeapi.co/api/v2/pokemon?limit=60&offset=0"
-let PokeAmount = 20;
-let AllPokemons = []
+let pokeAmount = 20;
+let loadNumber = 0;
+let allPokemons = [];
 let findPokemon = [];
 let evolutionChain = [];
 
-
 async function fetchPokeDex() {
-    const response = await fetch(PokeDexAPI);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${pokeAmount}&offset=${loadNumber}`);
     const data = await response.json();
 
-    pushPokemons(data.results)
+    await pushPokemons(data.results);
+    await Amount()
 }
 
-async function pushPokemons(PokemonsNames) {
-    for (let ipokemon = 0; ipokemon < PokemonsNames.length; ipokemon++) {
-        const pokemon = PokemonsNames[ipokemon];
-        const pokemonName = pokemon.name;
-        let typeAndImg = await getPokeInfo(pokemon.url);
-        let pokemonEntry = await getPokeEntry(pokemonName);
-        let pokemonAbilitis = await getAbilitis(pokemonName);
-        AllPokemons.push({ "name": `${pokemonName}`, "img": typeAndImg.img, "id": typeAndImg.id, "height": typeAndImg.height, "weight": typeAndImg.weight, "entryText": pokemonEntry, "abilitis": pokemonAbilitis, });
-    }
-    showPokedex(AllPokemons)
-    console.log(evolutionChain);
+async function pushPokemons(pokemonList) {
+    const pokemonDataPromises = pokemonList.map(async (pokemon) => {
+        const name = pokemon.name;
+
+        const [info, entry, abilities] = await Promise.all([
+            getPokeInfo(pokemon.url),
+            getPokeEntry(name),
+            getAbilitis(name)
+        ]);
+
+        return {
+            name: name,
+            img: info.img,
+            id: info.id,
+            height: info.height,
+            weight: info.weight,
+            entryText: entry,
+            abilitis: abilities
+        };
+    });
+
+    const results = await Promise.all(pokemonDataPromises);
+    allPokemons.push(...results);
+
+    showPokedex(allPokemons);
 }
 
 async function getPokeInfo(url) {
     const response = await fetch(url);
     const data = await response.json();
 
-    pokemonImg = data.sprites.front_default;
-    pokemonHight = data.height
-    okemonWeight = data.weight
-    let pokemonID = data.id
-    speciesUrl = data.species.url
-
-    return { "img": `${pokemonImg}`, "id": `${pokemonID}`, "height": `${pokemonHight}`, "weight": `${okemonWeight}`, "speciesUrl": `${speciesUrl}` };
+    return {
+        img: data.sprites.front_default,
+        id: data.id,
+        height: data.height,
+        weight: data.weight,
+        speciesUrl: data.species.url
+    };
 }
 
 async function getPokeEntry(pokemonName) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}/`);
     const data = await response.json();
 
-    pokemonEntry = data.flavor_text_entries[0].flavor_text
-    const formattedText = pokemonEntry.replace("\n", "<br>").replace("\f", "");
-    return formattedText
+    const entry = data.flavor_text_entries.find(entry => entry.language.name === "en");
+    const formattedText = entry ? entry.flavor_text.replace(/\n|\f/g, " ") : "No entry available.";
+    return formattedText;
 }
 
 async function getAbilitis(pokemonName) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`);
     const data = await response.json();
 
-    const abilities = data.abilities.map((ab) => ab.ability.name);
+    const abilities = data.abilities.map(ab => ab.ability.name);
     const stats = {};
-    data.stats.forEach((statObj) => {
-        stats[statObj.stat.name] = statObj.base_stat;});
-    const types = data.types.map((t) => t.type.name);
+    data.stats.forEach(statObj => {
+        stats[statObj.stat.name] = statObj.base_stat;
+    });
+    const types = data.types.map(t => t.type.name);
+
     return {
         abilities: abilities,
         stats: stats,
-        types: types};
+        types: types
+    };
 }
 
+async function Amount() {
+    if (allPokemons.length >= 160) {
+        return;
+    }
 
-
+    loadNumber += 20;
+    fetchPokeDex();
+}

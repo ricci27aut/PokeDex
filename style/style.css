@@ -265,6 +265,20 @@ a {
     overflow: hidden;
 }
 
+.user-error{
+    position: relative;
+    margin-top: 4px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    width: 152px;
+    text-align: center;
+}
+
 @media(max-width: 580px) {
     .overlay-content {
         height: 750px;
@@ -287,6 +301,10 @@ a {
         top: 45%;
         font-size: 15px;
         height: 700px;
+    }
+
+    .user-error{
+        top: -21px;
     }
 }
 
